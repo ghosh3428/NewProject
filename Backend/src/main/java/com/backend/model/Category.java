@@ -1,5 +1,7 @@
 package com.backend.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,8 +10,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Backend_Category")
-public class Category 
+public class Category implements Serializable
 {
+	private static final long serialVersionUId= 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;

@@ -1,5 +1,6 @@
 package com.backend.model;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -19,8 +20,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "BACKEND_PRODUCT")
-public class Product {
-
+public class Product implements Serializable{
+	private static final long serialVersionUId= 1L;
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="

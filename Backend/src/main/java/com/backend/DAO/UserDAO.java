@@ -14,5 +14,10 @@ public interface UserDAO
 	List<User> getSupplierList() ;
 	
 	boolean addAddress(Address address);
+	
+	public Address getBillingAddress(int user_id);
+	public List<Address> getShippingAddress(int user_id);
+	
+	public Address getAddress(int address_id);
 
 }
