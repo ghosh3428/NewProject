@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class FileUploader
 {
-	private static final String ABS_PATH = "C:\\Users\\Admin\\eclipse-workspace\\FrontController\\src\\main\\webapp\\assets\\images\\";
+	private static final String ABS_PATH = "D:\\Dt Project\\NewProject-main\\FrontController\\src\\main\\webapp\\assets\\images\\";
 	private static String REAL_PATH = null;
 	
 	

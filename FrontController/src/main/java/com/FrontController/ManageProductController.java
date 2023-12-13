@@ -118,7 +118,7 @@ public class ManageProductController {
 				FileUploader.uploadFile(request, p.getFile(), p.getCode());
 			}
 
-			return "redirect:/product?operation=product";
+			return "redirect:/manage/product?operation=product";
 		}
 
 	}
@@ -128,7 +128,7 @@ public class ManageProductController {
 		newCategory.setActive(true);
 		categoryDAO.insert(newCategory);
 
-		return "redirect:/product?operation=category";
+		return "redirect:/manage/product?operation=category";
 	}
 
 	@RequestMapping(value = "manage/product/{id}/activation", method = RequestMethod.POST)

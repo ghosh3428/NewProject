@@ -58,9 +58,13 @@ $(function()
 											+ window.contextRoot
 											+ '/product/show/'
 											+ data
-											+ '/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open">View</span></a> &#160;';
+											+ '/product" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-eye-open">View</span></a> &#160;';
 
-									
+									str += '<a href="'
+											+ window.contextRoot
+											+ '/cart/add/'
+											+ data
+											+ '/product" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-eye-open">Add Cart</span></a> &#160;';
 
 									return str;
 
@@ -150,9 +154,9 @@ $(function()
 									var str = '';
 									str += '<a href="'
 											+ window.contextRoot
-											+ '/manage/'
+											+ '/manage/manage/'
 											+ data
-											+ '/product" class="btn btn-primary"><span class="glyphicon glyphicon-pencil">View</span></a> &#160;';
+											+ '/product" class="btn btn-primary"><span class="glyphicon glyphicon-pencil">Edit</span></a> &#160;';
 
 									str += '<a href="'
 											+ window.contextRoot
@@ -190,8 +194,7 @@ $(function()
 															if (confirmed) {
 																var activeurl = window.contextRoot
 																		+ '/manage/manage/product/'
-																		+ checkbox
-																				.prop('value')
+																		+ checkbox.prop('value')
 																		+ '/activation';
 																$
 																		.post(
@@ -220,5 +223,29 @@ $(function()
 
 				});
 	}
+	
+	
+	
+	//Cart - Refresh
+	$('button[name="refreshCart"]').click(function()
+			{
+		var cartLineId = $(this).attr('value');
+		
+		var countField = $('#count_' + cartLineId);
+		
+		var originalCount = countField.attr('value');
+		
+
+		var updatedCount = countField.val();
+		
+		if(updatedCount != originalCount) 
+		{	
+			
+				
+				var updateUrl = window.contextRoot + '/cart/' + cartLineId + '/update?count=' + updatedCount;
+				window.location.href = updateUrl;
+			
+		}
+		});
 	
 });
